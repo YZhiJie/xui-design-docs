@@ -7,8 +7,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/xui-design-docs/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="/xui-design-docs/apple-touch-icon.png" />
   <title>XUI - 跨框架组件库文档</title>
-  <script type="module" crossorigin src="/xui-design-docs/assets/index-B_Axf0i7.js"></script>
-  <link rel="stylesheet" crossorigin href="/xui-design-docs/assets/index-Ck6jhPmu.css">
+  <script>
+    // 首屏防主题闪烁：应用加载前按持久化模式（明亮/暗黑/跟随系统）预先写入 data-theme
+    (function () {
+      var mode = localStorage.getItem('xui-docs-theme-mode') || 'system';
+      var dark =
+        mode === 'dark' ||
+        (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+  <script type="module" crossorigin src="/xui-design-docs/assets/index-UDNPF3lm.js"></script>
+  <link rel="stylesheet" crossorigin href="/xui-design-docs/assets/index-C6iUYwjF.css">
 </head>
 
 <body>
